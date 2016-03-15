@@ -66,7 +66,7 @@ namespace NPCLocations
 		}
 
 		[Subscribe]
-		public void PostRender(PreUIRenderEvent @event)
+		public void PostRender(PostRenderEvent @event)
 		{
 			//do we need to draw our "menu"
 			if (@event.Root.ActiveClickableMenu != null && showNPC)
@@ -135,46 +135,61 @@ namespace NPCLocations
 				Rectangle rightBar = new Rectangle(192, 128, 64, 64);
 				Rectangle lowerBar = new Rectangle(128, 192, 64, 64);
 
-				float menuHeight = height + 2 * 32;
-				float menuWidth = width + 2 * 32;
+				int menuHeight = height + 2 * 32;
+				int menuWidth = width + 2 * 32;
 
-				float rightUpperCorner = menuWidth - 2 * 64;
-				float leftLowerCorner = menuHeight - 2 * 64;
+				int rightUpperCorner = menuWidth - 64;
+				int leftLowerCorner = menuHeight - 64;
 
-				b.Draw(MenuTiles, menubar, upperLeft, Color.White);
-				//Draw upperbar
-				for (int i = 64; i < rightUpperCorner; i += 64)
+
+                //Draw upperbar
+				for (int i = 64; i < rightUpperCorner-64; i += 64)
 				{
 					b.Draw(MenuTiles, menubar + new Vector2(i, 0), upperBar, Color.White);
 				}
-				//draw upper right corner
-				b.Draw(MenuTiles, menubar + new Vector2(rightUpperCorner - 1, 0), upperRight, Color.White);
-
-				//draw left bar
-				for (int i = 64; i < leftLowerCorner; i++)
+                int leftOver = rightUpperCorner % 64;
+                Rectangle leftOverRect = new Rectangle(upperBar.X, upperBar.Y, leftOver, upperBar.Height);
+                b.Draw(MenuTiles, menubar + new Vector2(rightUpperCorner - leftOver, 0), leftOverRect, Color.White);
+				
+                //draw left bar
+				for (int i = 64; i < leftLowerCorner-64; i+=64)
 				{
 					b.Draw(MenuTiles, menubar + new Vector2(0, i), leftBar, Color.White);
 				}
-				//draw lower left corner
-				b.Draw(MenuTiles, menubar + new Vector2(0, leftLowerCorner + 64 - 1), lowerLeft, Color.White);
-
+                leftOver = leftLowerCorner % 64;
+                leftOverRect = new Rectangle(leftBar.X, leftBar.Y, leftBar.Width, leftOver);
+                b.Draw(MenuTiles, menubar + new Vector2(0, leftLowerCorner - leftOver), leftOverRect, Color.White);
+                
 				//draw right bar
-				for (int i = 64; i < leftLowerCorner; i++)
+				for (int i = 64; i < leftLowerCorner-64; i+=64)
 				{
-					b.Draw(MenuTiles, menubar + new Vector2(rightUpperCorner + 64 - 1, i), rightBar, Color.White);
+					b.Draw(MenuTiles, menubar + new Vector2(rightUpperCorner, i), rightBar, Color.White);
 				}
-				//draw right Corner
-				b.Draw(MenuTiles, menubar + new Vector2(rightUpperCorner + 64 - 1, leftLowerCorner + 64 - 1), lowerRight, Color.White);
-
+                leftOver = leftLowerCorner % 64;
+                leftOverRect = new Rectangle(rightBar.X, rightBar.Y, rightBar.Width, leftOver);
+                b.Draw(MenuTiles, menubar + new Vector2(rightUpperCorner, leftLowerCorner - leftOver), leftOverRect, Color.White);
+                
 				//draw lower Bar
-				for (int i = 64; i < rightUpperCorner; i++)
+				for (int i = 64; i < rightUpperCorner-64; i+=64)
 				{
-					b.Draw(MenuTiles, menubar + new Vector2(i, leftLowerCorner + 64 - 1), lowerBar, Color.White);
+					b.Draw(MenuTiles, menubar + new Vector2(i, leftLowerCorner), lowerBar, Color.White);
 				}
+                leftOver = rightUpperCorner % 64;
+                leftOverRect = new Rectangle(lowerBar.X, lowerBar.Y, leftOver, lowerBar.Height);
+                b.Draw(MenuTiles, menubar + new Vector2(rightUpperCorner-leftOver, leftLowerCorner), leftOverRect, Color.White);
+
+                //draw upper left corner
+                b.Draw(MenuTiles, menubar, upperLeft, Color.White);
+                //draw upper right corner
+                b.Draw(MenuTiles, menubar + new Vector2(rightUpperCorner, 0), upperRight, Color.White);
+                //draw lower left corner
+                b.Draw(MenuTiles, menubar + new Vector2(0, leftLowerCorner), lowerLeft, Color.White);
+                //draw lower right Corner
+                b.Draw(MenuTiles, menubar + new Vector2(rightUpperCorner, leftLowerCorner), lowerRight, Color.White);
 
 
-				//put all npc location information in a set
-				SortedSet<string> npcLocation = new SortedSet<string>();
+                //put all npc location information in a set
+                SortedSet<string> npcLocation = new SortedSet<string>();
 				for (int i = 0; i < root.Locations.Count; i++)
 				{
 					GameLocation location = root.Locations[i];

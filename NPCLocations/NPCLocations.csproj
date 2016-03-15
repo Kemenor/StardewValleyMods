@@ -16,7 +16,7 @@
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
-    <OutputPath>C:\Users\Thomas\AppData\Roaming\StardewValley\Mods\NPCLocations\</OutputPath>
+    <OutputPath>..\..\..\..\AppData\Roaming\StardewValley\Mods\NPCLocations\</OutputPath>
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
@@ -82,11 +82,11 @@
       <Private>False</Private>
     </Reference>
     <Reference Include="Newtonsoft.Json">
-      <HintPath>..\..\..\..\..\..\..\..\Program Files (x86)\Steam\SteamApps\common\Stardew Valley\Newtonsoft.Json.dll</HintPath>
+      <HintPath>G:\SteamLibrary\steamapps\common\Stardew Valley\Newtonsoft.Json.dll</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="StormLoader">
-      <HintPath>..\..\..\..\..\..\..\..\Program Files (x86)\Steam\SteamApps\common\Stardew Valley\StormLoader.exe</HintPath>
+      <HintPath>G:\SteamLibrary\steamapps\common\Stardew Valley\StormLoader.exe</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="System" />
@@ -99,7 +99,7 @@
     <Reference Include="System.Xml" />
     <Reference Include="xTile, Version=2.0.4.0, Culture=neutral, processorArchitecture=x86">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\..\..\..\..\..\Program Files (x86)\Steam\SteamApps\common\Stardew Valley\xTile.dll</HintPath>
+      <HintPath>G:\SteamLibrary\steamapps\common\Stardew Valley\xTile.dll</HintPath>
       <Private>False</Private>
     </Reference>
   </ItemGroup>
