@@ -13,32 +13,55 @@ using System.Text;
 using System.Threading.Tasks;
 using Microsoft.Xna.Framework.Input;
 using System.Diagnostics;
+using Storm;
 
 namespace NPCLocations
 {
 	[Mod]
-	public class NPCLocations
+	public class NPCLocations : DiskResource
 	{
 		private bool showNPC = false;
 		private NPCMenu locs;
+		private Keys openKey;
+		public static NPCLocationConfig NConfig { get; private set; }
 		[Subscribe]
 		public void init(InitializeEvent @event)
 		{
 			locs = new NPCMenu(@event.Root);
+			NConfig = new NPCLocationConfig();
+			NConfig = (NPCLocationConfig)Config.InitializeConfig(Config.GetBasePath(this), NConfig);
+			if (Enum.IsDefined(typeof(Keys), NConfig.Key.ToUpper()))
+			{
+				openKey = (Keys)Enum.Parse(typeof(Keys), NConfig.Key.ToUpper());
+			}
+			else
+			{
+				openKey = Keys.Z;
+			}
+
 		}
 
 		[Subscribe]
 		public void KeyPressedCallback(KeyPressedEvent @event)
 		{
 			//only react to the z key
-			if (@event.Key == Microsoft.Xna.Framework.Input.Keys.Z)
+			if (@event.Key == openKey)
+
 			{
-				locs.root = @event.Root;
-				// create our menu
-				//set it as ActiveMenu per Proxy
-				@event.Root.ActiveClickableMenu = @event.Proxy<ClickableMenuAccessor, ClickableMenu>(locs);
-				//set our draw to true
-				showNPC = true;
+				if (@event.Root.ActiveClickableMenu != null && showNPC)
+				{
+					@event.Root.ActiveClickableMenu = null;
+					showNPC = false;
+				}
+				else
+				{
+					locs.root = @event.Root;
+					// create our menu
+					//set it as ActiveMenu per Proxy
+					@event.Root.ActiveClickableMenu = @event.Proxy<ClickableMenuAccessor, ClickableMenu>(locs);
+					//set our draw to true
+					showNPC = true;
+				}
 			}
 		}
 
@@ -225,6 +248,14 @@ namespace NPCLocations
 			}
 		}
 	}
-
+	public class NPCLocationConfig : Config
+	{
+		public String Key { get; set; }
+		public override Config GenerateBaseConfig(Config baseConfig)
+		{
+			Key = "Z";
+			return this;
+		}
+	}
 
 }
