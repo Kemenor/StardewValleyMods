@@ -1,0 +1,34 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.24720.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UsefullSprinkler", "UsefullSprinkler\UsefullSprinkler.csproj", "{14B49836-0B4D-4CCA-9485-447B6FE160DA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NPCLocations", "NPCLocations\NPCLocations.csproj", "{31858836-A26C-461E-BEC4-E7092F6857A0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Storm", "..\..\Storm\Storm\Storm\Storm.csproj", "{3AE6190C-1CC7-4FA4-B859-5EABC8EC0614}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{14B49836-0B4D-4CCA-9485-447B6FE160DA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{14B49836-0B4D-4CCA-9485-447B6FE160DA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{14B49836-0B4D-4CCA-9485-447B6FE160DA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{14B49836-0B4D-4CCA-9485-447B6FE160DA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{31858836-A26C-461E-BEC4-E7092F6857A0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{31858836-A26C-461E-BEC4-E7092F6857A0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{31858836-A26C-461E-BEC4-E7092F6857A0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{31858836-A26C-461E-BEC4-E7092F6857A0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3AE6190C-1CC7-4FA4-B859-5EABC8EC0614}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3AE6190C-1CC7-4FA4-B859-5EABC8EC0614}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3AE6190C-1CC7-4FA4-B859-5EABC8EC0614}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3AE6190C-1CC7-4FA4-B859-5EABC8EC0614}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

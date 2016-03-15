@@ -1,0 +1,8 @@
+﻿{
+    "displayName": "Usefull Sprinklers",
+    "author": "Kemenor",
+    "version": "0.1",
+    "description": "Make sprinklers have a rectangle they water",
+
+    "assemblyFileName": "UsefullSprinklers.dll"
+}

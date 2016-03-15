@@ -1,0 +1,8 @@
+﻿{
+    "displayName": "NPC Locations",
+    "author": "Kemenor",
+    "version": "0.1",
+    "description": "Show a ugly menu with all NPC Locations",
+
+    "assemblyFileName": "NPCLocations.dll"
+}
