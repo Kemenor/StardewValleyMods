@@ -10,9 +10,12 @@ Will show a menu with the NPC names and their locations open the menu with the "
 The open key is now configurable:
 ```json
 {
-  "Key": "Z"
+  "KeyboardKey": "Z",
+  "ButtonKey": "LeftShoulder"
 }
 ```
+Possible Values are listed here in the Member Name column: https://msdn.microsoft.com/en-us/library/microsoft.xna.framework.input.buttons.aspx
+
 
 ##Usefull Sprinklers
 Will make sprinklers more usefull. Sprinkler will now water an area around them, configurable in the config.json.
