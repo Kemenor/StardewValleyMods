@@ -7,6 +7,12 @@ I will write what version of the Storm API I used for the releases, it should wo
 #Current Mods
 ##NPCLocation
 Will show a menu with the NPC names and their locations open the menu with the "z" key and close it with "escape".
+The open key is now configurable:
+```json
+{
+  "Key": "Z"
+}
+```
 
 ##Usefull Sprinklers
 Will make sprinklers more usefull. Sprinkler will now water an area around them, configurable in the config.json.
