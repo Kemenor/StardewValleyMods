@@ -29,7 +29,7 @@ namespace NPCLocations
 
         public override string Version
         {
-            get { return "1.0"; }
+            get { return "1.0.0.0.SMAPI"; }
         }
 
         public override string Description
@@ -114,7 +114,7 @@ namespace NPCLocations
 
         public void Events_KeyPressed(object sender, EventArgsKeyPressed e)
         {
-            Console.WriteLine("Key pressed: " + e.KeyPressed.ToString());
+            //Console.WriteLine("Key pressed: " + e.KeyPressed.ToString());
             if (e.KeyPressed.ToString().Equals(KeyboardKey))
             {
                 HandleMenu();
@@ -123,7 +123,7 @@ namespace NPCLocations
 
         public void Events_ControllerPressed(object sender, EventArgsControllerButtonPressed e)
         {
-            Console.WriteLine("Controller button pressed: " + e.ButtonPressed.ToString());
+            //Console.WriteLine("Controller button pressed: " + e.ButtonPressed.ToString());
             if (e.ButtonPressed.ToString().Equals(ButtonKey))
             {
                 HandleMenu();
