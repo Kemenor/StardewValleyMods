@@ -1,0 +1,7 @@
+﻿{
+  "Name": "NPCLocations Mod",
+  "Authour": "Kemenor's code, adapted for SMAPI by cantorsdust",
+  "Version": "1.1.0.0.SMAPI",
+  "Description": "Adaptation of Kemenor's Storm mod to SMAPI.  Shows a menu listing current NPC locations when you press a configurable hotkey.",
+  "EntryDll":  "NPCLocations.dll"
+}

@@ -36,8 +36,9 @@
     <Reference Include="Stardew Valley">
       <HintPath>..\..\..\Stardew Valley.exe</HintPath>
     </Reference>
-    <Reference Include="StardewModdingAPI">
-      <HintPath>..\..\..\StardewModdingAPI.exe</HintPath>
+    <Reference Include="StardewModdingAPI, Version=1.0.0.0, Culture=neutral, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\StardewModdingAPI.exe</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -57,7 +58,8 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="NPCLocations.ini" />
+    <None Include="config.json" />
+    <None Include="manifest.json" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
