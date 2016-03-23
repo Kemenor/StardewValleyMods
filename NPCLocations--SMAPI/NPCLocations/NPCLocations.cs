@@ -32,8 +32,7 @@ namespace NPCLocations
 
         void runConfig()
         {
-            NPCLocationsConfig = new ModConfig();
-            NPCLocationsConfig = (ModConfig)Config.InitializeConfig(Config.GetBasePath(this), NPCLocationsConfig);
+            NPCLocationsConfig = new ModConfig().InitializeConfig(BaseConfigPath);
         }
 
 
@@ -78,11 +77,11 @@ namespace NPCLocations
         public string ButtonKey { get; set; }
         public string KeyboardKey { get; set; }
 
-        public override Config GenerateBaseConfig(Config baseConfig)
+        public override T GenerateDefaultConfig<T>()
         {
             ButtonKey = "LeftShoulder";
             KeyboardKey = "Z";
-            return this;
+            return this as T;
         }
     }
 }

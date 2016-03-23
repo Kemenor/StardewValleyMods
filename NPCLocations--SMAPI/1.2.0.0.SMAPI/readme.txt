@@ -1,3 +1,7 @@
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+NPCLocations v1.2.0.0.SMAPI
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
 Adaptation of Kemenor's Storm mod, NPCLocations, to SMAPI.  Shows a menu listing current NPC locations when you press Z or LeftShoulder on your controller.
 Kemenor's code, adapted for SMAPI by cantorsdust
 
@@ -20,7 +24,7 @@ AND
 %appdata%\StardewValley\Mods\NPCLocations\manifest.json
 
 
-REQUIRES SMAPI 0.38+ to be installed!  Version 1.0.0.0.SMAPI is for SMAPI 0.37
+REQUIRES SMAPI 0.39 to be installed!  Version 1.1.0.0.SMAPI is for SMAPI 0.38.  Version 1.0.0.0.SMAPI is for SMAPI 0.37
 https://github.com/ClxS/SMAPI/releases
 
 -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -43,6 +47,9 @@ Possible ButtonKey values are listed here in the Member Name column: https://msd
 -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 CHANGELOG
 -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+1.1.0.0.SMAPI
+Updated mod for SMAPI 0.39
+
 1.1.0.0.SMAPI
 Updated mod for SMAPI 0.38, included mod manifest.
 
